@@ -8,8 +8,10 @@ class Stack{
   Stack();
   int length();
   void push(float);
+  void push(int);
   float pop();
   float peek();
+  void clear();
  private:
   int len;
   std::vector<float> floatStack;

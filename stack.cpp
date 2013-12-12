@@ -1,7 +1,13 @@
 #include"stack.h"
+#include<vector>
 
 Stack::Stack(){
   this->len=0;
+}
+
+void Stack::clear(){
+  this->len=0;
+  this->floatStack.clear();
 }
 
 void Stack::push(float x){
@@ -9,9 +15,16 @@ void Stack::push(float x){
   this->len++;
 }
 
+void Stack::push(int x){
+  this->floatStack.push_back(float(x));
+  this->len++;
+}
+
 float Stack::pop(){
   len--;
-  return this->floatStack.pop_back();
+  float temp = this->floatStack.back();
+  this->floatStack.pop_back();
+  return temp;
 }
 
 float Stack::peek(){
